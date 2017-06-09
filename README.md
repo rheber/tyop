@@ -8,7 +8,7 @@ Run `go fmt && go build`.
 
 ## Usage
 
-Running `tyop` without flags seeds the RNG with the current time and generates 3 lines of 20 characters each separated at intervals of 5 characters.
+Running `tyop` without flags seeds the RNG with the current time and generates 3 lines of 20 home row characters each separated at intervals of 5 characters.
 
 ### Flags
 
@@ -17,6 +17,24 @@ Running `tyop` without flags seeds the RNG with the current time and generates 3
 `-l` The length of each line
 
 `-n` The amount of lines to generate
+
+`-r` A string of characters corresponding to sets of keys as follows:
+
+* n `1234567890-=
+
+* N ~!@#$%^&*()_+
+
+* t qwertyuiop[]\
+
+* T QWERTYUIOP{}|
+
+* h asdfghjkl;'
+
+* H ASDFGHJKL:"
+
+* b zxcvbnm,./
+
+* B ZXCVBNM<>?
 
 `-s` The seed value for the RNG
 

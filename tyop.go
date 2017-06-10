@@ -27,6 +27,7 @@ func main() {
 		chunkSize  uint
 		lineLength uint
 		rowCode    string
+		xtraChars  string
 		seed       int64
 
 		keys []byte
@@ -39,6 +40,7 @@ func main() {
 	flag.UintVar(&chunkSize, "c", 5, "size of chunks to break each line into")
 	flag.UintVar(&lineLength, "l", 20, "length of each line, excluding spaces")
 	flag.StringVar(&rowCode, "r", "hH", "code for rows to include, consult readme")
+	flag.StringVar(&xtraChars, "x", "", "extra characters to practice")
 	flag.Int64Var(&seed, "s", time.Now().UnixNano(), "seed for RNG")
 	flag.Parse()
 
@@ -54,6 +56,7 @@ func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 
 	keys = make([]byte, 0)
+	keys = append(keys, xtraChars...)
 	if strings.Contains(rowCode, "n") {
 		keys = append(keys, numLower...)
 	}

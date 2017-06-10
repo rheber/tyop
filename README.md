@@ -38,6 +38,7 @@ Running `tyop` without flags seeds the RNG with the current time and generates 3
 
 `-s` The seed value for the RNG
 
+`-x` A string of extra characters to practice
 
 ## Cleaning
 
